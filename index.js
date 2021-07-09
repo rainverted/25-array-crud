@@ -10,11 +10,15 @@ automobiliai.prideti('tesla');
 automobiliai.prideti('gaz');
 
 
-automobiliai.redaguoti(10, 'mazda');     //(pozicija, elementas i kuri pakeisime)
-automobiliai.redaguoti(-1, 'mazda');     //(pozicija, elementas i kuri pakeisime)
-automobiliai.redaguoti(2.5, 'mazda');     //(pozicija, elementas i kuri pakeisime)
+// automobiliai.redaguoti(10, 'mazda');     //(pozicija, elementas i kuri pakeisime)
+// automobiliai.redaguoti(-1, 'mazda');     //(pozicija, elementas i kuri pakeisime)
+// automobiliai.redaguoti(2.5, 'mazda');     //(pozicija, elementas i kuri pakeisime)
 
 automobiliai.redaguoti(3, 'opel');     //(pozicija, elementas i kuri pakeisime)
+
+automobiliai.pasalinti(1);
+automobiliai.pasalinti(2);
+
 
 // console.log(automobiliai);          //Sarasas{}
 automobiliai.spausdinti();

@@ -30,14 +30,50 @@ class Sarasas {
     }
 
     redaguoti(index, newItem) {                //parenkame parametrus index > pozicijai, newItem > naujam elemetui
-        if (this.list.length <= index ||
-            index < 0 ||
-            index % 1 !== 0) {
+        if (!this.isValidIndex(index) ||
+            !this.isValidItem(newItem)) {
+            return false;
+        }
+
+        if (!newItem) {
             return false;
         }
         this.list[index] = newItem;             //pagal nurodyta index pakeiciame pirmini elementa i nauja elementa
 
     }
+
+    pasalinti(index) {
+        const updatedList = [];             //sukuriame nauja sarasa, kuris bus sukurtas po elemento istrinimo
+
+        for (let i = 0; i < this.list.length; i++) {
+            if (i !== index) {                          //jei pozicija nelygu nurodytam index
+                updatedList.push(this.list[i]);         //supushiname elementus i nauja sarasa be pasalinto elemento
+            }
+
+        }
+
+        this.list = updatedList;                        //pirmini sarasa pakeiciame nauju
+    }
+
+    isValidIndex(index) {
+        if (this.list.length <= index ||            //apsauga nesuteikia undefined pozicijos, jei nurodoma pozicija neatitinka saraso kiekio
+            index < 0 ||
+            index % 1 !== 0) {
+            return false;
+        }
+
+        return true;
+    }
+
+    isValidItem(item) {
+        if (typeof item !== 'string' ||
+            item === '') {
+            return false;
+        }
+
+        return true;
+    }
+
 }
 
 module.exports = Sarasas;
